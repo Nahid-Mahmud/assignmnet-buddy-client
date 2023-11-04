@@ -50,7 +50,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const demoUser = { name: "nahid" };
-
+  console.log(user);
   const authValues = {
     demoUser,
     user,
