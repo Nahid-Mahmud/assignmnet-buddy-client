@@ -30,6 +30,7 @@ const Banner = () => {
           <Link to={"/allAssignments"}>
             <motion.button
               whileHover={{ scale: 1.2, rotate: 360 }}
+              transition={{ type: "tween" }}
               className="btn bg-[#ff4e59] hover:bg-red-600 text-white"
             >
               Get Started
