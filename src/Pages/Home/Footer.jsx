@@ -1,9 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../Hooks/useAuth";
 
 const Footer = () => {
-  const { user } = useAuth();
   return (
     <div className="bg-[#245d51]">
       <footer className="footer footer-center p-10 max-w-[90vw] mx-auto  rounded">

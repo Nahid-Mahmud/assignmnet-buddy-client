@@ -12,7 +12,7 @@ const Faq = () => {
         <p className="text-center pb-5 text-3xl font-bold underline  ">
           Have Any questions?{" "}
         </p>
-        <div className="collapse collapse-plus ">
+        <div className="collapse collapse-arrow ">
           <input type="radio" name="my-accordion-3" />
           <div className="collapse-title text-xl font-medium">
             Can I collaborate with multiple friends on a single assignment?
@@ -27,7 +27,7 @@ const Faq = () => {
             </p>
           </div>
         </div>
-        <div className="collapse collapse-plus ">
+        <div className="collapse collapse-arrow ">
           <input type="radio" name="my-accordion-3" />
           <div className="collapse-title text-xl font-medium">
             How do I provide feedback when grading my friends assignments?
@@ -42,7 +42,7 @@ const Faq = () => {
             </p>
           </div>
         </div>
-        <div className="collapse collapse-plus ">
+        <div className="collapse collapse-arrow ">
           <input type="radio" name="my-accordion-3" />
           <div className="collapse-title text-xl font-medium">
             Are there any tools for tracking our study progress and performance?
