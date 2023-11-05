@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../Hooks/useAuth";
-import { toast, useToast } from "react-toastify";
+import { useAuth } from "../../Hooks/useAuth";
+import { toast } from "react-toastify";
 import { useState } from "react";
 import { updateProfile } from "firebase/auth";
-import GoogleLogin from "../SharedComponents/GoogleLogin";
+import GoogleLogin from "../../SharedComponents/GoogleLogin";
 
 const SignUp = () => {
   // useSates
@@ -71,7 +71,7 @@ const SignUp = () => {
         SetUserSignUpError(err.message);
       });
   };
-
+// Google sign In 
   const handleGoogleLogin = () => {
     SetUserSignUpError("");
     console.log("first");
@@ -94,20 +94,15 @@ const SignUp = () => {
         }
       })
       .catch((err) => {
-        SetUserSignUpError(err);
+        SetUserSignUpError(err.message);
       });
   };
 
   return (
-    <div
-      className="hero min-h-screen"
-      style={{
-        backgroundImage: "url(https://i.ibb.co/XJnMfDn/cool-background.png)",
-      }}
-    >
-      <div className="w-full max-w-md">
+    <div className="hero min-h-screen bg-gradient-to-r from-[#113a31] to-[#ff4e59]">
+      <div className="w-full  max-w-md ">
         <div className="bg-white bg-opacity-50 shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <form onSubmit={handleForm}>
+          <form onSubmit={handleForm} className="pb-6">
             <p className="text-center  text-3xl font-semibold underline py-5">
               Create Your Account
             </p>
@@ -159,7 +154,7 @@ const SignUp = () => {
               />
               <p className="text-red-500 text-xs italic">{userSignUpError}</p>
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3 justify-between">
               <input
                 className="btn bg-green-600 text-white hover:text-black hover:bg-green-500 transition"
                 type="submit"
@@ -177,8 +172,16 @@ const SignUp = () => {
               </p>
             </div>
           </form>
-          <div onClick={handleGoogleLogin} className="text-center py-7 ">
-            <GoogleLogin text="Sign Up With Google "></GoogleLogin>
+          <p className="text-2xl font-medium ">
+            Connect with Social Networks!
+          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div onClick={handleGoogleLogin} className="text-center py-7 ">
+              <GoogleLogin text="Sign Up With Google "></GoogleLogin>
+            </div>
+            <button className="btn bg-green-600 hover:bg-green-700 text-white  hover:text-black">
+              <Link to={"/"}>Go Home</Link>
+            </button>
           </div>
         </div>
         <p className="text-center text-slate-300 text-xs">
