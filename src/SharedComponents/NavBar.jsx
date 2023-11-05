@@ -1,6 +1,5 @@
 // All imports
 import NavItem from "./NavItem";
-import logo from "../assets/images/AB.png";
 import { useAuth } from "../Hooks/useAuth";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"
@@ -23,7 +22,7 @@ const NavBar = () => {
       </li>
       <li>
         <NavItem
-          itemName={"Assignments"}
+          itemName={"All Assignments"}
           pathName={"/allAssignments"}
         ></NavItem>
       </li>
@@ -106,7 +105,7 @@ const NavBar = () => {
             </div>
             <Link to={"/"}>
               {" "}
-              <img className="h-16 w-16" src={logo} alt="" />
+              <img className="h-16 w-16" src='https://i.ibb.co/YNDZ8wP/AB.png' alt="" />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">

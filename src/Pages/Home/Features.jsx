@@ -1,12 +1,11 @@
 import { IoIosCheckbox, IoIosCreate } from "react-icons/io";
-import keyfeatures from "../../assets/images/keyfeatures-removebg.png";
 import { SiProgress } from "react-icons/si";
 
 const Features = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-center">
+    <div className="flex flex-col lg:flex-row-reverse   justify-center items-center">
       <div>
-        <img className="md:h-[35rem]  " src={keyfeatures} alt="" />{" "}
+        <img className="md:h-[35rem]  " src="https://i.ibb.co/Hz1JGXJ/keyfeatures-removebg.png" alt="" />{" "}
       </div>
       <div className="">
         <div>
