@@ -14,7 +14,7 @@ const Banner = () => {
       <motion.div
         initial={{ scale: 0 }}
         animate={{ rotateX: 360, scale: 1 }}
-        transition={{ type: "tween", duration: 1 }}
+        transition={{ type: "tween", duration: 2 }}
         className="hero-content text-center text-black"
       >
         <div className="max-w-3xl">
