@@ -30,11 +30,11 @@ const Faq = () => {
         <div className="collapse collapse-plus ">
           <input type="radio" name="my-accordion-3" />
           <div className="collapse-title text-xl font-medium">
-            How do I provide feedback when grading my friends' assignments?
+            How do I provide feedback when grading my friends assignments?
           </div>
           <div className="collapse-content">
             <p>
-              Grading your friends' assignments is simple. You can use our
+              Grading your friends assignments is simple. You can use our
               built-in feedback tools to leave comments, suggestions, and
               ratings. This feature ensures that the feedback process is
               constructive and beneficial for both you and your friends,
