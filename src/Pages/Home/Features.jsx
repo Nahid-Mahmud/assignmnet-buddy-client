@@ -3,7 +3,7 @@ import { SiProgress } from "react-icons/si";
 
 const Features = () => {
   return (
-    <div className="flex flex-col lg:flex-row-reverse   justify-center items-center">
+    <div id="features" className="flex flex-col lg:flex-row-reverse   justify-center items-center">
       <div>
         <img
           className="md:h-[35rem]  "
