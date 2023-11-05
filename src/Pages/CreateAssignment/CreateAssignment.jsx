@@ -1,23 +1,9 @@
-import { motion, useTime, useTransform } from "framer-motion";
+import RectangleAnimation from "../../SharedComponents/RectangleAnimation";
+
 const CreateAssignment = () => {
-  const time = useTime();
-  const rotate = useTransform(time, [0, 4000], [0, 360], { clamp: false });
   return (
     <div className="md:max-w-[90vw] max-w-[95vw] py-10 mx-auto">
-      <div className="flex justify-center">
-        <motion.div
-          style={{ rotate }}
-          className="bg-[#ff4e59] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
-        ></motion.div>
-        <motion.div
-          style={{ rotate }}
-          className="bg-[#245d51] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
-        ></motion.div>
-        <motion.div
-          style={{ rotate }}
-          className="bg-[#ff4e59] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
-        ></motion.div>
-      </div>
+      <RectangleAnimation></RectangleAnimation>
       {/* Heading */}
       <h2 className="capitalize text-center py-10 text-2xl md:text-3xl font-bold underline">
         Create an assignment.
