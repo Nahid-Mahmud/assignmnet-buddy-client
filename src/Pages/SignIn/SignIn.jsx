@@ -113,7 +113,7 @@ const SignIn = () => {
                   className="text-blue-500  hover:text-blue-800"
                   to={"/signup"}
                 >
-                  SignUp
+                  Sign Up
                 </Link>{" "}
                 here
               </p>

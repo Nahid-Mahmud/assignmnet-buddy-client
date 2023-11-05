@@ -30,14 +30,14 @@ const NavBar = () => {
         ""
       ) : (
         <li>
-          <NavItem itemName={"SignIn"} pathName={"/signin"}></NavItem>
+          <NavItem itemName={"Sign In"} pathName={"/signin"}></NavItem>
         </li>
       )}
       {user ? (
         ""
       ) : (
         <li>
-          <NavItem itemName={"SignUp"} pathName={"/signup"}></NavItem>
+          <NavItem itemName={"Sign Up"} pathName={"/signup"}></NavItem>
         </li>
       )}
 
