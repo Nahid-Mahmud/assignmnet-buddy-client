@@ -9,7 +9,7 @@ const Faq = () => {
         />
       </div>
       <div className="flex-1 mx-auto">
-        <p className="text-center pb-5 text-3xl font-bold underline  ">
+        <p className=" lg:ml-5 pb-5 text-3xl font-bold underline  ">
           Have Any questions?{" "}
         </p>
         <div className="collapse collapse-arrow ">
