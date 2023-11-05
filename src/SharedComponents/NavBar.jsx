@@ -2,6 +2,7 @@
 import NavItem from "./NavItem";
 import logo from "../assets/images/AB.png";
 import { useAuth } from "../Hooks/useAuth";
+import { Link } from "react-router-dom";
 
 // componennt
 const NavBar = () => {
@@ -20,7 +21,10 @@ const NavBar = () => {
         <NavItem itemName={"Home"} pathName={"/"}></NavItem>
       </li>
       <li>
-        <NavItem itemName={"Assignments"} pathName={"/allAssignments"}></NavItem>
+        <NavItem
+          itemName={"Assignments"}
+          pathName={"/allAssignments"}
+        ></NavItem>
       </li>
       {user ? (
         ""
@@ -60,7 +64,10 @@ const NavBar = () => {
       )}
       {user ? (
         <li>
-          <NavItem itemName={"SubMitted Assignments"} pathName={"/submittedAssignments"}></NavItem>
+          <NavItem
+            itemName={"Submitted Assignments"}
+            pathName={"/submittedAssignments"}
+          ></NavItem>
         </li>
       ) : (
         ""
@@ -69,7 +76,7 @@ const NavBar = () => {
   );
   return (
     <div className="bg-[#245d51] text-white">
-      <div className=" md:max-w-[90vw] max-w-[95vw] mx-auto">
+      <div className="xl:max-w-[90vw] max-w-[95vw] mx-auto">
         <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">
@@ -91,12 +98,15 @@ const NavBar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm text-black w-fit dropdown-content gap-3 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box "
+                className="menu menu-sm text-black w-fit dropdown-content gap-3 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box"
               >
                 {navLinks}
               </ul>
             </div>
-            <img className="h-16 w-16" src={logo} alt="" />
+            <Link to={"/"}>
+              {" "}
+              <img className="h-16 w-16" src={logo} alt="" />
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className=" menu-horizontal gap-3 px-1">{navLinks}</ul>
