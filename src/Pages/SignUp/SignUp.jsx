@@ -173,7 +173,7 @@ const SignUp = () => {
             </div>
           </form>
           <p className="text-2xl font-medium ">
-            Connect with Social Networks!
+            Connect with Social Network!
           </p>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div onClick={handleGoogleLogin} className="text-center py-7 ">

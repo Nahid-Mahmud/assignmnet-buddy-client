@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import GoogleLogin from "../../SharedComponents/GoogleLogin";
 import { useAuth } from "../../Hooks/useAuth";
 import { useState } from "react";
@@ -7,17 +7,22 @@ import { toast } from "react-toastify";
 const SignIn = () => {
   const { emailPassLogin, googleLogIn } = useAuth();
   const [signInError, setSignInError] = useState();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-
-  // GoogleLogin
-  const handleGoogleLogin = () => {
+  // Login with email and password
+  const handleLogin = (e) => {
     setSignInError("");
-    console.log("first");
-    googleLogIn()
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+    emailPassLogin(email, password)
       .then((result) => {
         const currentUser = result.user;
         if (currentUser) {
-          toast(" Sign Up Successfull", {
+          //show toast
+          toast(" Sign In Successfull", {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -28,6 +33,33 @@ const SignIn = () => {
             theme: "light",
           });
         }
+        navigate(location.state ? location.state : "/");
+      })
+      .catch((err) => {
+        setSignInError(err.message);
+      });
+  };
+
+  // GoogleLogin
+  const handleGoogleLogin = () => {
+    setSignInError("");
+    console.log("first");
+    googleLogIn()
+      .then((result) => {
+        const currentUser = result.user;
+        if (currentUser) {
+          toast(" Sign In Successfull", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+        navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
         setSignInError(err.message);
@@ -38,7 +70,7 @@ const SignIn = () => {
     <div className="hero min-h-screen bg-gradient-to-r from-[#113a31] to-[#ff4e59]">
       <div className="w-full  max-w-md ">
         <div className="bg-white bg-opacity-50 shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <form className="pb-6">
+          <form onSubmit={handleLogin} className="pb-6">
             <p className="text-center  text-3xl font-semibold underline  py-5">
               LogIn To Your Account
             </p>
@@ -76,7 +108,7 @@ const SignIn = () => {
                 className="inline-block align-baseline font-bold capitalize"
                 href="#"
               >
-                Don't Have an account?{" "}
+                New Student?{" "}
                 <Link
                   className="text-blue-500  hover:text-blue-800"
                   to={"/signup"}
@@ -88,7 +120,7 @@ const SignIn = () => {
             </div>
           </form>
           <p className="text-2xl font-medium capitalize">
-            LogIn With Social Networks!
+            LogIn With Social Network!
           </p>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div onClick={handleGoogleLogin} className="text-center py-7 ">
