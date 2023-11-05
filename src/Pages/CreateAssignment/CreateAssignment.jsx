@@ -2,19 +2,23 @@ import { Link } from "react-router-dom";
 import RectangleAnimation from "../../SharedComponents/RectangleAnimation";
 
 const CreateAssignment = () => {
+  const handleSubmitAssignment = (e) => {
+    e.preventDefault();
+    console.log(e.target.dificulty.value);
+  };
   return (
     <div className="md:max-w-[90vw] max-w-[95vw] py-10 mx-auto">
       <RectangleAnimation></RectangleAnimation>
-      {/* Heading */}
-      <h2 className="capitalize text-center py-10 text-2xl md:text-3xl font-bold underline">
-        Create an assignment.
-      </h2>
 
       {/* // forms */}
-      <div>
-        <div className="w-full  max-w-7xl mx-auto ">
+      <div className="py-10  overflow-hidden">
+        <div className=" bg-gradient-to-r rounded from-[#113a31] to-[#ff4e59] max-w-7xl mx-auto ">
           <div className="bg-white bg-opacity-50 shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <form className="pb-6">
+            {/* Heading */}
+            <h2 className="capitalize mb-10 text-center  text-2xl md:text-3xl font-bold underline">
+              Create an assignment.
+            </h2>
+            <form onSubmit={handleSubmitAssignment} className="pb-6">
               <div className="flex flex-col gap-3 lg:flex-row">
                 <div className="mb-4 w-full">
                   <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -77,9 +81,10 @@ const CreateAssignment = () => {
                   placeholder="Assignment Description "
                 ></textarea>
               </div>
-              <div className="pb-10 ">
+              <div className="pb-10 w-96 ">
+                <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Dificulty Level </label>
                 <select
-                  className="btn text-white hover:bg-green-500 hover:text-black bg-[#245d51]"
+                  className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
                   name="dificulty"
                   id="dificulty"
                 >
