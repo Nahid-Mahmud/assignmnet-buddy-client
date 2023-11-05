@@ -7,22 +7,38 @@ const CreateAssignment = () => {
       <div className="flex justify-center">
         <motion.div
           style={{ rotate }}
-          className="bg-[#ff4e59] rounded-[2rem] w-36 h-36"
+          className="bg-[#ff4e59] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
         ></motion.div>
         <motion.div
           style={{ rotate }}
-          className="bg-[#245d51] rounded-[2rem] w-36 h-36"
+          className="bg-[#245d51] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
         ></motion.div>
         <motion.div
           style={{ rotate }}
-          className="bg-[#ff4e59] rounded-[2rem] w-36 h-36"
+          className="bg-[#ff4e59] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
         ></motion.div>
       </div>
-      <p className="capitalize text-center py-10 text-2xl md:text-3xl font-bold underline">
-        Creaate an assignment.
-      </p>
+      {/* Heading */}
+      <h2 className="capitalize text-center py-10 text-2xl md:text-3xl font-bold underline">
+        Create an assignment.
+      </h2>
+
+      {/* // forms */}
+      <div></div>
     </div>
   );
 };
 
 export default CreateAssignment;
+
+// title, description,marks,thumbnail,imageurl,assignment dificulty level (easy , medium, hard ) -- use Dropdown , Due date
+
+// a. Assignment creation:
+// ● Any logged in user is able to create an assignment for all users.
+// ● An assignment will have a title, description, marks, thumbnail
+// Image URL, assignment difficulty level(easy, medium, hard) [YOU
+// MAY USE DROPDOWN SELECT INPUT FIELD], and due date
+// [use this package for selecting date
+// “https://www.npmjs.com/package/react-datepicker”] .
+// ● A success message will be shown when the assignment will be
+// created successfully. [YOU MAY USE TOAST OF MODAL]
