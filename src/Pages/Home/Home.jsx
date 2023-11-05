@@ -5,7 +5,7 @@ const Home = () => {
   const { demoUser } = useAuth();
   return (
     <div>
-      <NavBar></NavBar>
+     
     </div>
   );
 };

@@ -20,14 +20,51 @@ const NavBar = () => {
         <NavItem itemName={"Home"} pathName={"/"}></NavItem>
       </li>
       <li>
-        <NavItem itemName={"Assignments"} pathName={"/signin"}></NavItem>
+        <NavItem itemName={"Assignments"} pathName={"/allAssignments"}></NavItem>
       </li>
-      <li>
-        <NavItem itemName={"SignIn"} pathName={"/signin"}></NavItem>
-      </li>
-      <li>
-        <NavItem itemName={"SignUp"} pathName={"/signup"}></NavItem>
-      </li>
+      {user ? (
+        ""
+      ) : (
+        <li>
+          <NavItem itemName={"SignIn"} pathName={"/signin"}></NavItem>
+        </li>
+      )}
+      {user ? (
+        ""
+      ) : (
+        <li>
+          <NavItem itemName={"SignUp"} pathName={"/signup"}></NavItem>
+        </li>
+      )}
+
+      {user ? (
+        <li>
+          <NavItem
+            itemName={"Create Assignment"}
+            pathName={"/createAssitnment"}
+          ></NavItem>
+        </li>
+      ) : (
+        ""
+      )}
+
+      {user ? (
+        <li>
+          <NavItem
+            itemName={"My Assignments"}
+            pathName={"/myAssignments"}
+          ></NavItem>
+        </li>
+      ) : (
+        ""
+      )}
+      {user ? (
+        <li>
+          <NavItem itemName={"SubMitted Assignments"} pathName={"/submittedAssignments"}></NavItem>
+        </li>
+      ) : (
+        ""
+      )}
     </>
   );
   return (
@@ -64,17 +101,26 @@ const NavBar = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className=" menu-horizontal gap-3 px-1">{navLinks}</ul>
           </div>
-          <div className="navbar-end flex gap-3">
-            <div>
-              <img
-                title={user?.displayName}
-                className="rounded-full h-16 w-auto"
-                src={user?.photoURL}
-                alt=""
-              />
+          {user ? (
+            <div className="navbar-end flex gap-3">
+              <div>
+                <img
+                  title={user?.displayName}
+                  className="rounded-full h-16 w-auto"
+                  src={user?.photoURL}
+                  alt=""
+                />
+              </div>
+              <button
+                onClick={handleUserSignOur}
+                className="btn bg-[#ff4e59] text-white hover:bg-red-600"
+              >
+                Log Out
+              </button>
             </div>
-            <button onClick={handleUserSignOur} className="btn">Log Out</button>
-          </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
