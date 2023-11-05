@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import { app } from "../Firebase/Firebase.config";
 
@@ -38,6 +39,11 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
+  // signOut
+  const signoutUser = () => {
+    return signOut(auth);
+  };
+
   // setting the observer
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
@@ -58,6 +64,7 @@ const AuthProvider = ({ children }) => {
     emailPassSignup,
     emailPassLogin,
     googleLogIn,
+    signoutUser,
   };
 
   return (

@@ -1,14 +1,13 @@
 import { useAuth } from "../../Hooks/useAuth";
-
+import NavBar from "../../SharedComponents/NavBar";
 
 const Home = () => {
-    const {demoUser}=useAuth()
-    console.log(demoUser)
-    return (
-        <div>
-            This is Home
-        </div>
-    );
+  const { demoUser } = useAuth();
+  return (
+    <div>
+      <NavBar></NavBar>
+    </div>
+  );
 };
 
 export default Home;
