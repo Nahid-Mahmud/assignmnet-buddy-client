@@ -2,7 +2,7 @@
 import NavItem from "./NavItem";
 import { useAuth } from "../Hooks/useAuth";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 // componennt
 const NavBar = () => {
@@ -103,10 +103,17 @@ const NavBar = () => {
                 {navLinks}
               </ul>
             </div>
-            <Link to={"/"}>
-              {" "}
-              <img className="h-16 w-16" src='https://i.ibb.co/YNDZ8wP/AB.png' alt="" />
-            </Link>
+            <div className="flex items-center">
+              <Link to={"/"}>
+                {" "}
+                <img
+                  className="h-16 w-16"
+                  src="https://i.ibb.co/YNDZ8wP/AB.png"
+                  alt=""
+                />
+              </Link>
+              <p className="text-2xl font-semibold hidden md:inline lg:hidden xl:inline">AssignmentBuddy</p>
+            </div>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className=" menu-horizontal gap-3 px-1">{navLinks}</ul>
@@ -122,8 +129,8 @@ const NavBar = () => {
                 />
               </div>
               <motion.button
-              whileHover={{scale:1.2,rotate: 360}}
-              transition={{type:"tween"}}
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                transition={{ type: "tween" }}
                 onClick={handleUserSignOur}
                 className="btn bg-[#ff4e59] text-white hover:bg-red-600"
               >
