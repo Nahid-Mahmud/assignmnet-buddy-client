@@ -5,7 +5,11 @@ const Banner = () => {
   return (
     <div className="hero min-h-[70vh] flex flex-col lg:flex-row justify-center items-center ">
       <div>
-        <img className="lg:h-[35rem]" src='https://i.ibb.co/tD4jxF9/Welcome.png' alt="" />
+        <img
+          className="lg:h-[35rem]"
+          src="https://i.ibb.co/tD4jxF9/Welcome.png"
+          alt=""
+        />
       </div>
       <motion.div
         initial={{ scale: 0 }}
