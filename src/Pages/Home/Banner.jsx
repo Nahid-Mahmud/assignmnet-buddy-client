@@ -1,11 +1,20 @@
 import { Link } from "react-router-dom";
+import welcome from "../../assets/images/Welcome.png";
+import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
-    <div className="hero min-h-[70vh]  bg-gradient-to-r from-[#113a31] to-[#ff4e59]">
-      <div className="hero-content text-center text-white">
+    <div className="hero min-h-[70vh] flex flex-col lg:flex-row justify-center items-center ">
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ rotateX: 360, scale: 1 }}
+        transition={{ type: "tween", duration: 3, delay: 1 }}
+      >
+        <img className="lg:h-[35rem]" src={welcome} alt="" />
+      </motion.div>
+      <div className="hero-content text-center text-black">
         <div className="max-w-3xl">
-          <h1 className="text-5xl font-bold">
+          <h1 className="lg:text-5xl text-2xl lg:font-bold font-semibold ">
             Welcome to Assignment Buddy - Your Ultimate Study Companion!
           </h1>
           <p className="py-6">
@@ -15,7 +24,12 @@ const Banner = () => {
             embark on a journey of shared knowledge and academic excellence.
           </p>
           <Link to={"/allAssignments"}>
-            <button className="btn btn-primary">Get Started</button>
+            <motion.button
+              whileHover={{ scale: 1.2, rotate: 360 }}
+              className="btn bg-[#ff4e59] hover:bg-red-600 text-white"
+            >
+              Get Started
+            </motion.button>
           </Link>
         </div>
       </div>

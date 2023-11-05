@@ -3,6 +3,7 @@ import NavItem from "./NavItem";
 import logo from "../assets/images/AB.png";
 import { useAuth } from "../Hooks/useAuth";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"
 
 // componennt
 const NavBar = () => {
@@ -116,20 +117,22 @@ const NavBar = () => {
               <div>
                 <img
                   title={user?.displayName}
-                  className="rounded-full h-16 w-auto"
+                  className="rounded-full h-16 w-16 "
                   src={user?.photoURL}
                   alt=""
                 />
               </div>
-              <button
+              <motion.button
+              whileHover={{scale:1.2,rotate: 360}}
+              transition={{type:"tween"}}
                 onClick={handleUserSignOur}
                 className="btn bg-[#ff4e59] text-white hover:bg-red-600"
               >
                 Log Out
-              </button>
+              </motion.button>
             </div>
           ) : (
-            ""
+            <div className="navbar-end">Study Web!</div>
           )}
         </div>
       </div>
