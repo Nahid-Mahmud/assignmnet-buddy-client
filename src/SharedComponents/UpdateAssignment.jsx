@@ -55,7 +55,7 @@ const UpdateAssignment = () => {
           Swal.fire({
             icon: "success",
             title: "Successful",
-            text: "Assignment Added Successfully !",
+            text: "Assignment Updated Successfully !",
           });
         }
       })
