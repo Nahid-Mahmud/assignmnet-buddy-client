@@ -51,7 +51,7 @@ const UpdateAssignment = () => {
       .put(url, assignment)
       .then((res) => {
         console.log(res.data);
-        if (res.data.insertedId) {
+        if (res.data.modifiedCount) {
           Swal.fire({
             icon: "success",
             title: "Successful",
@@ -60,7 +60,7 @@ const UpdateAssignment = () => {
         }
       })
       .then((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 
