@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loader from "../../SharedComponents/Loader";
 const AllAssignMents = () => {
+  // getting data from server
   const { data, isLoading, isError } = useQuery({
     queryKey: ["repoData"],
     queryFn: async () => {
