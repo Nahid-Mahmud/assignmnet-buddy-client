@@ -7,16 +7,22 @@ const RectangleAnimation = () => {
     <div className="flex justify-center">
       <motion.div
         style={{ rotate }}
-        className="bg-[#ff4e59] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
-      ></motion.div>
+        className="bg-[#ff4e59] flex items-center justify-center rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
+      >
+       <p className="text-sm text-white">Knowledge</p> 
+      </motion.div>
       <motion.div
         style={{ rotate }}
-        className="bg-[#245d51] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
-      ></motion.div>
+        className="bg-[#245d51] flex items-center justify-center rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
+      >
+        <p className="text-sm text-white">Is</p>
+      </motion.div>
       <motion.div
         style={{ rotate }}
-        className="bg-[#ff4e59] rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
-      ></motion.div>
+        className="bg-[#ff4e59] flex items-center justify-center rounded-[2rem] md:w-36 md:h-36 h-28 w-20 "
+      >
+        <p className="text-sm text-white">Power!</p> 
+       </motion.div>
     </div>
   );
 };

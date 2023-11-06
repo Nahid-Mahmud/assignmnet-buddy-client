@@ -2,25 +2,45 @@ import RectangleAnimation from "../../SharedComponents/RectangleAnimation";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
+import axios from "axios";
+import { useAuth } from "../../Hooks/useAuth";
 
 const CreateAssignment = () => {
+  const {user} = useAuth()
   const [startDate, setStartDate] = useState(new Date());
   const handleSubmitAssignment = (e) => {
     e.preventDefault();
+    // getting all form data
     const assignmentTitle = e.target.title.value;
     const thumbnailUrl = e.target.photourl.value;
-    const dueDate = startDate;
+    // making due date sting and getting only date thhrough slice
+    const dueDate = startDate.toISOString().slice(0, 10);
     const dificulty = e.target.dificulty.value;
     const mark = e.target.mark.value;
     const description = e.target.description.value;
-    console.log(
+    const createdBy = user.email;
+    // creating assignment object for post method
+    const assignment = {
       assignmentTitle,
       thumbnailUrl,
       dueDate,
       dificulty,
       mark,
-      description
-    );
+      description,
+      createdBy
+    };
+    // import.meta.env.VITE_serverUrl
+    // post using axios
+    const url = `${import.meta.env.VITE_serverUrl}/addAssignment`;
+    console.log(url);
+    axios
+      .post(url, assignment)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .then((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className="md:max-w-[90vw] max-w-[95vw] py-10 mx-auto">
