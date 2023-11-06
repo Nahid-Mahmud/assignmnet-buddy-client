@@ -1,58 +1,34 @@
 [
   {
-    "assignmentTitle": "React.js Components",
-    "description": "Create and use React components in a web application. Tasks include:\n\n1. Build a simple 'ToDo' app with React components.\n2. Develop a reusable 'Button' component with customizable styles.\n3. Create a 'Counter' component that increments and decrements a value.",
-    "mark": 93,
-    "thumbnailUrl": "https://example.com/thumbnail8.jpg",
-    "difficulty": "medium",
-    "dueDate": "2023-12-24"
+    "assignmentTitle": "JavaScript Basics",
+    "description": "Solve basic JavaScript problems to understand core concepts. Tasks include:\n\n1. Write a function to find the sum of all even numbers in an array.\n2. Create a simple To-Do list application using JavaScript.\n3. Implement a function to reverse a string.",
+    "mark": 85,
+    "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "Easy",
+    "dueDate": "2023-12-15"
   },
   {
-    "assignmentTitle": "Node.js Server",
-    "description": "Build a server using Node.js and Express. Tasks include:\n\n1. Create a basic HTTP server using Node.js.\n2. Develop a RESTful API with Express to perform CRUD operations on resources.\n3. Implement user authentication using JWT tokens.",
-    "mark": 89,
-    "thumbnailUrl": "https://example.com/thumbnail9.jpg",
-    "difficulty": "medium",
-    "dueDate": "2023-12-16"
+    "assignmentTitle": "DOM Manipulation",
+    "description": "Manipulate the Document Object Model using JavaScript. Tasks include:\n\n1. Create an interactive image gallery using JavaScript and HTML.\n2. Build a form validation system to ensure user input is correct.\n3. Develop a simple shopping cart functionality using DOM manipulation.",
+    "mark": 92,
+    "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "Medium",
+    "dueDate": "2023-12-20"
   },
   {
-    "assignmentTitle": "Databases and SQL",
-    "description": "Work with databases and SQL queries in JavaScript. Tasks include:\n\n1. Set up a database connection and schema in SQLite.\n2. Write SQL queries to retrieve data from the database.\n3. Build a simple web application that interacts with the database.",
-    "mark": 87,
-    "thumbnailUrl": "https://example.com/thumbnail10.jpg",
-    "difficulty": "medium",
-    "dueDate": "2023-12-23"
+    "assignmentTitle": "Advanced JavaScript Concepts",
+    "description": "Solve complex problems related to closures, prototypes, and callbacks. Tasks include:\n\n1. Implement a closure to create a private counter.\n2. Build a custom implementation of the `map` function for arrays.\n3. Use callback functions to fetch and process data from an API.",
+    "mark": 78,
+    "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "Medium",
+    "dueDate": "2023-12-18"
   },
   {
-    "assignmentTitle": "Web Security and Authentication",
-    "description": "Implement security and user authentication in web applications. Tasks include:\n\n1. Set up secure communication using HTTPS.\n2. Implement user registration and login functionality.\n3. Add role-based access control to restrict access to specific parts of the application.",
-    "mark": 91,
-    "thumbnailUrl": "https://example.com/thumbnail11.jpg",
-    "difficulty": "medium",
-    "dueDate": "2023-12-29"
-  },
-  {
-    "assignmentTitle": "Frontend Frameworks",
-    "description": "Explore popular frontend frameworks like Angular or Vue.js. Tasks include:\n\n1. Create a simple web application using the Angular framework.\n2. Build a responsive user interface with Vue.js components.\n3. Compare and contrast the strengths and weaknesses of different frameworks.",
-    "mark": 94,
-    "thumbnailUrl": "https://example.com/thumbnail12.jpg",
-    "difficulty": "medium",
-    "dueDate": "2023-12-26"
-  },
-  {
-    "assignmentTitle": "Web Performance Optimization",
-    "description": "Optimize web applications for performance and speed. Tasks include:\n\n1. Minify and bundle JavaScript and CSS assets to reduce load times.\n2. Implement lazy loading for images and resources.\n3. Measure and analyze the performance of a web page and propose improvements.",
-    "mark": 96,
-    "thumbnailUrl": "https://example.com/thumbnail13.jpg",
-    "difficulty": "medium",
-    "dueDate": "2023-12-28"
-  },
-  {
-    "assignmentTitle": "Testing and Debugging",
-    "description": "Learn effective testing and debugging techniques in JavaScript. Tasks include:\n\n1. Write unit tests for a JavaScript function using a testing framework.\n2. Debug a web application to identify and fix issues in the code.\n3. Use browser developer tools to inspect and modify web pages for testing and debugging purposes.",
-    "mark": 82,
-    "thumbnailUrl": "https://example.com/thumbnail14.jpg",
-    "difficulty": "medium",
-    "dueDate": "2023-12-27"
+    "assignmentTitle": "Asynchronous JavaScript",
+    "description": "Write asynchronous code using promises and async/await. Tasks include:\n\n1. Fetch and display data from a JSON API using the Fetch API and promises.\n2. Create a simple asynchronous function to simulate waiting for data.\n3. Build an image carousel that loads images asynchronously with async/await.",
+    "mark": 88,
+    "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "Hard",
+    "dueDate": "2023-12-22"
   }
 ]

@@ -6,7 +6,7 @@ import axios from "axios";
 import { useAuth } from "../../Hooks/useAuth";
 
 const CreateAssignment = () => {
-  const {user} = useAuth()
+  const { user } = useAuth();
   const [startDate, setStartDate] = useState(new Date());
   const handleSubmitAssignment = (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ const CreateAssignment = () => {
       dificulty,
       mark,
       description,
-      createdBy
+      createdBy,
     };
     // import.meta.env.VITE_serverUrl
     // post using axios
@@ -95,7 +95,7 @@ const CreateAssignment = () => {
                   />
                 </div>
                 <div className="pb-10 w-96 ">
-                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  <label className="block mb-2 text-sm font-medium text-gray-900 ">
                     {" "}
                     Dificulty Level{" "}
                   </label>
@@ -105,7 +105,7 @@ const CreateAssignment = () => {
                     id="dificulty"
                   >
                     <option value="Easy">Easy</option>
-                    <option value="Meidum">Meidum</option>
+                    <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
                   </select>
                 </div>
@@ -124,7 +124,7 @@ const CreateAssignment = () => {
               </div>
 
               <div className="mb-10">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <label className="block mb-2 text-sm font-medium text-gray-900 ">
                   Assignment Description
                 </label>
                 <textarea
@@ -132,7 +132,7 @@ const CreateAssignment = () => {
                   name="description"
                   required
                   rows="4"
-                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  "
                   placeholder="Assignment Description "
                 ></textarea>
               </div>

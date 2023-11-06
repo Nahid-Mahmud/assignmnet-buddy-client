@@ -13,13 +13,13 @@ const Features = () => {
       </div>
       <div className="">
         <div>
-          <section className="bg-white dark:bg-gray-900">
+          <section className="bg-white ">
             <div className="py-8 px-4 mx-auto max-w-screen-md sm:py-16 lg:px-6">
               <div className="max-w-screen-md mb-8 lg:mb-16">
                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white underline py-5">
                   Key features of Assignment Buddy.
                 </h2>
-                <p className="text-gray-500 sm:text-xl dark:text-gray-400">
+                <p className="text-gray-500 sm:text-xl ">
                   Assignment Buddy offers a trio of essential features to
                   enhance your group study experience. Create custom assignments
                   to suit your study goals, collaborate with friends to deepen
@@ -31,10 +31,10 @@ const Features = () => {
                   <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                     <IoIosCreate className="text-3xl text-[#ff4e59]"></IoIosCreate>
                   </div>
-                  <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  <h3 className="mb-2 text-xl font-bold ">
                     Create Assignments
                   </h3>
-                  <p className="text-gray-500 dark:text-gray-400">
+                  <p className="text-gray-500 ">
                     Craft assignments tailored to your study needs. Share them
                     with your friends, making the learning process highly
                     interactive and structured.
@@ -45,11 +45,11 @@ const Features = () => {
                   <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                     <IoIosCheckbox className="text-3xl text-[#ff4e59]"></IoIosCheckbox>
                   </div>
-                  <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  <h3 className="mb-2 text-xl font-bold ">
                     {/* Enterprise Design */}
                     Complete Assignments
                   </h3>
-                  <p className="text-gray-500 dark:text-gray-400">
+                  <p className="text-gray-500 ">
                     Work on assignments individually or as a team. Collaborative
                     learning fosters a deeper understanding of the subject
                     matter.
@@ -59,10 +59,10 @@ const Features = () => {
                   <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                     <SiProgress className="text-3xl text-[#ff4e59]"></SiProgress>
                   </div>
-                  <h3 className="mb-2 text-xl font-bold dark:text-white">
+                  <h3 className="mb-2 text-xl font-bold ">
                     Grade Your Friends Assignments
                   </h3>
-                  <p className="text-gray-500 dark:text-gray-400">
+                  <p className="text-gray-500 ">
                     Contribute to each other's growth by providing constructive
                     feedback and grading your friends work.
                   </p>
