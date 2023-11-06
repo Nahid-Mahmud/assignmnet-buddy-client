@@ -5,7 +5,8 @@
     "mark": 85,
     "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "difficulty": "Easy",
-    "dueDate": "2023-12-15"
+    "dueDate": "2023-12-15",
+    "createdBy": "nahidmahmudn@gmail.com"
   },
   {
     "assignmentTitle": "DOM Manipulation",
@@ -13,7 +14,8 @@
     "mark": 92,
     "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "difficulty": "Medium",
-    "dueDate": "2023-12-20"
+    "dueDate": "2023-12-20",
+    "createdBy": "nahidmahmudn@gmail.com"
   },
   {
     "assignmentTitle": "Advanced JavaScript Concepts",
@@ -21,7 +23,8 @@
     "mark": 78,
     "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "difficulty": "Medium",
-    "dueDate": "2023-12-18"
+    "dueDate": "2023-12-18",
+    "createdBy": "admin@gmail.com"
   },
   {
     "assignmentTitle": "Asynchronous JavaScript",
@@ -29,6 +32,7 @@
     "mark": 88,
     "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "difficulty": "Hard",
-    "dueDate": "2023-12-22"
+    "dueDate": "2023-12-22",
+    "createdBy": "admin@gmail.com"
   }
 ]

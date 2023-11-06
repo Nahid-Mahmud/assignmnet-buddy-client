@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const CreateAssignment = () => {
   const { user } = useAuth();
@@ -37,6 +38,14 @@ const CreateAssignment = () => {
       .post(url, assignment)
       .then((res) => {
         console.log(res.data);
+        if(res.data.insertedId){
+          Swal.fire({
+            icon: "success",
+            title: "Successful",
+            text: "Assignment Added Successfully !",
+          });
+        }
+
       })
       .then((err) => {
         console.log(err);

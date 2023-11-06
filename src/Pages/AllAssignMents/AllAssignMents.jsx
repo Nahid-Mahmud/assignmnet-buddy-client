@@ -1,8 +1,7 @@
 import axios from "axios";
-
 import ViewAllAssignmentsCard from "./ViewAllAssignmentsCard";
 import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
+
 const AllAssignMents = () => {
   // getting data from server
 
@@ -34,36 +33,36 @@ const AllAssignMents = () => {
   }, [value]);
 
   return (
-    <>
-      <div>AllAssignMents</div>
-      {/* // dropwown */}
-      <div className="pb-10 w-96 ">
-        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-          {" "}
-          Dificulty Level{" "}
-        </label>
-        <select
-          className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
-          name="dificulty"
-          id="dificulty"
-          onChange={handleOptionChange}
-          value={value}
-        >
-          <option value="All">All</option>
-          <option value="Easy">Easy</option>
-          <option value="Medium">Medium</option>
-          <option value="Hard">Hard</option>
-        </select>
+    <div className="bg-gradient-to-r from-[#113a31] to-[#ff4e59]">
+      <div className="max-w-[95vw] mx-auto md:max-w-[90vw] ">
+        {/* // dropwown */}
+        <div className="pb-10 w-96 py-10 ">
+          <label className=" mb-2 text-2xl font-semibold text-gray-900 ">
+            Set Dificulty Level:
+          </label>
+          <select
+            className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
+            name="dificulty"
+            id="dificulty"
+            onChange={handleOptionChange}
+            value={value}
+          >
+            <option value="All">All</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+        </div>
+        <div className="min-h-[60vh] grid gap-5 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 py-16 ">
+          {assignments?.map((assignment, index) => (
+            <ViewAllAssignmentsCard
+              key={index}
+              assignment={assignment}
+            ></ViewAllAssignmentsCard>
+          ))}
+        </div>
       </div>
-      {/* <div>
-        {assignments?.map((assignment, index) => (
-          <ViewAllAssignmentsCard
-            key={index}
-            assignment={assignment}
-          ></ViewAllAssignmentsCard>
-        ))}
-      </div> */}
-    </>
+    </div>
   );
 };
 
