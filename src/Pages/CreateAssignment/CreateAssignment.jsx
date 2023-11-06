@@ -1,10 +1,26 @@
-import { Link } from "react-router-dom";
 import RectangleAnimation from "../../SharedComponents/RectangleAnimation";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
 
 const CreateAssignment = () => {
+  const [startDate, setStartDate] = useState(new Date());
   const handleSubmitAssignment = (e) => {
     e.preventDefault();
-    console.log(e.target.dificulty.value);
+    const assignmentTitle = e.target.title.value;
+    const thumbnailUrl = e.target.photourl.value;
+    const dueDate = startDate;
+    const dificulty = e.target.dificulty.value;
+    const mark = e.target.mark.value;
+    const description = e.target.description.value;
+    console.log(
+      assignmentTitle,
+      thumbnailUrl,
+      dueDate,
+      dificulty,
+      mark,
+      description
+    );
   };
   return (
     <div className="md:max-w-[90vw] max-w-[95vw] py-10 mx-auto">
@@ -29,6 +45,7 @@ const CreateAssignment = () => {
                     id="username"
                     type="text"
                     name="title"
+                    required
                   />
                 </div>
                 <div className="mb-4 w-full">
@@ -40,21 +57,37 @@ const CreateAssignment = () => {
                     id="photourl"
                     type="text"
                     name="photourl"
+                    required
                   />
                 </div>
               </div>
 
               <div className="flex flex-col lg:flex-row gap-3">
-                <div className="mb-4 w-full">
+                <div className="mb-4 ">
                   <label className="block text-gray-700 text-sm font-bold mb-2">
                     Due Daate
                   </label>
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="date"
-                    type="date"
-                    name="date"
+                  {/* date picker  */}
+                  <DatePicker
+                    className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
                   />
+                </div>
+                <div className="pb-10 w-96 ">
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {" "}
+                    Dificulty Level{" "}
+                  </label>
+                  <select
+                    className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
+                    name="dificulty"
+                    id="dificulty"
+                  >
+                    <option value="Easy">Easy</option>
+                    <option value="Meidum">Meidum</option>
+                    <option value="Hard">Hard</option>
+                  </select>
                 </div>
                 <div className="mb-4 w-full">
                   <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -65,6 +98,7 @@ const CreateAssignment = () => {
                     id="mark"
                     type="number"
                     name="mark"
+                    required
                   />
                 </div>
               </div>
@@ -76,22 +110,11 @@ const CreateAssignment = () => {
                 <textarea
                   id="message"
                   name="description"
+                  required
                   rows="4"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Assignment Description "
                 ></textarea>
-              </div>
-              <div className="pb-10 w-96 ">
-                <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Dificulty Level </label>
-                <select
-                  className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
-                  name="dificulty"
-                  id="dificulty"
-                >
-                  <option value="Easy">Easy</option>
-                  <option value="Meidum">Meidum</option>
-                  <option value="Hard">Hard</option>
-                </select>
               </div>
 
               <div className="flex items-center gap-3 justify-between">

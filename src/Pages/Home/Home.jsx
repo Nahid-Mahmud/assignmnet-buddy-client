@@ -6,6 +6,7 @@ import Features from "./Features";
 
 const Home = () => {
   const { demoUser } = useAuth();
+  // console.log(typeof import.meta.env.VITE_serverUrl);
   return (
     <div>
       <Banner></Banner>
