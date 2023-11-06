@@ -7,7 +7,7 @@ import CreateAssignment from "../Pages/CreateAssignment/CreateAssignment";
 import MyAssignments from "../Pages/MyAssignments/MyAssignments";
 import SubmittedAssignments from "../Pages/SubmittedAssignments/SubmittedAssignments";
 import AllAssignMents from "../Pages/AllAssignMents/AllAssignMents";
-import ViewAssitnment from "../SharedComponents/ViewAssitnment";
+import ViewAssitnmentDetail from "../SharedComponents/ViewAssitnmentDetail";
 
 export const router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
         path: "/allAssignments",
       },
       {
-        element: <ViewAssitnment></ViewAssitnment>,
+        element: <ViewAssitnmentDetail></ViewAssitnmentDetail>,
         path: "/:id",
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_serverUrl}/assignment/${params.id}`),
