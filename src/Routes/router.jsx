@@ -8,6 +8,7 @@ import MyAssignments from "../Pages/MyAssignments/MyAssignments";
 import SubmittedAssignments from "../Pages/SubmittedAssignments/SubmittedAssignments";
 import AllAssignMents from "../Pages/AllAssignMents/AllAssignMents";
 import ViewAssitnmentDetail from "../SharedComponents/ViewAssitnmentDetail";
+import UpdateAssignment from "../SharedComponents/UpdateAssignment";
 
 export const router = createBrowserRouter([
   {
@@ -40,7 +41,11 @@ export const router = createBrowserRouter([
         path: "/:id",
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_serverUrl}/assignment/${params.id}`),
-      },
+      },{
+        element: <UpdateAssignment></UpdateAssignment>,
+        path: '/:id/update',
+        loader: ({params})=> fetch(`${import.meta.env.VITE_serverUrl}/assignment/${params.id}`)
+      }
     ],
   },
   {

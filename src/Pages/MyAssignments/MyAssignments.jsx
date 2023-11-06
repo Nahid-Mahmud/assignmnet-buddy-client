@@ -20,6 +20,7 @@ const MyAssignments = () => {
       const userCreatedAssignments = result.data;
       return userCreatedAssignments;
     },
+    retry: 2,
   });
   console.log(data, isLoading, isError);
   // is loading
