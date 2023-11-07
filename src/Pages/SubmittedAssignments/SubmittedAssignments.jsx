@@ -16,6 +16,13 @@ const SubmittedAssignments = () => {
     },
     retry: 1,
   });
+
+  const filterMarkedData = data?.filter((singleData) => {
+    return singleData.status !== "confirm";
+  });
+  // console.log('filterMarkedData',filterMarkedData);
+
+
 //   console.log("Data from submitted assignment", data);
 //   console.log(isLoading);
 
@@ -30,7 +37,7 @@ const SubmittedAssignments = () => {
   return (
     <div className="max-w-[95vw] mx-auto md:max-w-[90vw]" >
       <div  className=" grid gap-5 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 py-16 ">
-        {data.map((singleSubmittedAssignment, index) => (
+        {filterMarkedData.map((singleSubmittedAssignment, index) => (
           <SubmittedAssignmentcard
             key={index}
             singleSubmittedAssignment={singleSubmittedAssignment}

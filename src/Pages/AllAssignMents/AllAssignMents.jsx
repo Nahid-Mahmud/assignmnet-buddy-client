@@ -9,7 +9,7 @@ const AllAssignMents = () => {
 
   const [assignments, setAssignments] = useState(null);
   console.log(value);
-  console.log("data from server", assignments);
+  // console.log("data from server", assignments);
 
   const handleOptionChange = (e) => {
     setvalue(e.target.value);

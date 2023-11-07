@@ -1,8 +1,32 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import RectangleAnimation from "./RectangleAnimation";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const GiveMark = () => {
   const data = useLoaderData();
+  const navigate = useNavigate();
+  const handleMark = (e) => {
+    e.preventDefault();
+    const givenMark = e.target.givenMark.value;
+    const feedback = e.target.feedback.value;
+    console.log(givenMark, feedback);
+    const giventMarkData = { givenMark, feedback, status: 'confirm' };
+    axios.patch(
+      `${import.meta.env.VITE_serverUrl}/markAssignment/${data._id}`,
+      giventMarkData
+    ).then(res=>{
+      console.log(res.data);
+      if(res.data.matchedCount){
+        Swal.fire({
+          icon: "success",
+          title: "Successful",
+          text: "Assignment Marked Successfully !",
+        });
+        navigate('/submittedAssignments')
+      }
+    })
+  };
   console.log(data);
   return (
     <div className="py-10 max-w-[95vw] md:max-w-[90vw] mx-auto">
@@ -16,7 +40,7 @@ const GiveMark = () => {
             <h2 className="capitalize mb-10 text-center  text-2xl md:text-3xl font-bold underline">
               Mark Assignment
             </h2>
-            <form className="pb-6">
+            <form onSubmit={handleMark} className="pb-6">
               <p>
                 {" "}
                 <span className="text-xl font-medium">
@@ -24,12 +48,21 @@ const GiveMark = () => {
                 </span>: {data?.assignmentTitle}
               </p>
               <div>
-                <span className="text-xl font-medium">Submitted Pdf Link : </span>{" "}
-                <a className="text-blue-500" href={data?.pdfLink}>
+                <span className="text-xl font-medium">
+                  Submitted Pdf Link :{" "}
+                </span>{" "}
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-500"
+                  href={data?.pdfLink}
+                >
                   {" "}
                   {data?.pdfLink}{" "}
                 </a>
               </div>{" "}
+              {/* Pdf react */}
+              <div></div>
               <p>
                 <span className="text-xl font-medium"> Quick Note </span>:{" "}
                 {data?.quickNote}
@@ -55,11 +88,11 @@ const GiveMark = () => {
                 </label>
                 <textarea
                   id="message"
-                  name="giveFeedback"
+                  name="feedback"
                   required
                   rows="4"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  "
-                  placeholder="Assignment Quick Note "
+                  placeholder="Give FeedBack "
                 ></textarea>
               </div>
               <div className="flex items-center gap-3 justify-between">
