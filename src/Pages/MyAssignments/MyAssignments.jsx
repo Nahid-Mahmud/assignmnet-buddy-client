@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
 import Loader from "../../SharedComponents/Loader";
 import axios from "axios";
 import { useAuth } from "../../Hooks/useAuth";
+import MyAssignmentCard from "./MyAssignmentCard";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 const MyAssignments = () => {
   // const geeting current user forom auth contenx
@@ -32,7 +34,48 @@ const MyAssignments = () => {
     return <div>Can't Get Data From Server</div>;
   }
 
-  return <div>My assingments</div>;
+  // use sates
+  const [usercreatedAssignments, setUsercreatedAssignments] = useState(data);
+
+  //delete assignment
+  const handleDelete = (id) => {
+    console.log("Delete is working", id);
+    axios
+      .delete(`${import.meta.env.VITE_serverUrl}/deleteAssignment/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.deletedCount) {
+          Swal.fire({
+            icon: "success",
+            title: "Successful",
+            text: "Assignment Deleted Successfully !",
+          });
+          const filterData = data.filter((data) => data._id !== id);
+          setUsercreatedAssignments(filterData);
+        }
+      });
+  };
+
+  return (
+    <div className="max-w-[95vw] mx-auto md:max-w-[90vw]">
+      <div className="py-10">
+        <div>
+          <h1 className="text-3xl font-semibold text-center underline  ">
+            My Assignments
+          </h1>
+        </div>
+        <div className="min-h-[60vh] grid gap-5 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 py-16 ">
+          {usercreatedAssignments.map((assignmet, index) => (
+            <MyAssignmentCard
+              handleDelete={handleDelete}
+              key={index}
+              assignmet={assignmet}
+            ></MyAssignmentCard>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default MyAssignments;
