@@ -71,8 +71,8 @@ const UpdateAssignment = () => {
             title: "Successful",
             text: "Assignment Updated Successfully !",
           });
+          navigate("/allAssignments");
         }
-        navigate("/allAssignments");
       })
       .then((err) => {
         // console.log(err);

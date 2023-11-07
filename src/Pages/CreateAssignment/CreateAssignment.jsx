@@ -47,9 +47,7 @@ const CreateAssignment = () => {
         }
 
       })
-      .then((err) => {
-        console.log(err);
-      });
+     
   };
   return (
     <div className="md:max-w-[90vw] max-w-[95vw] py-10 mx-auto">

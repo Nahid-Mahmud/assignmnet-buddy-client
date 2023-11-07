@@ -50,6 +50,7 @@ export const router = createBrowserRouter([
       {
         element: <AllAssignMents></AllAssignMents>,
         path: "/allAssignments",
+        loader: ()=> fetch (`${import.meta.env.VITE_serverUrl}/assignment-count`)
       },
       {
         element: (

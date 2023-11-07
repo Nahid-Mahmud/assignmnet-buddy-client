@@ -39,7 +39,7 @@ const ViewAllAssignmentsCard = ({ assignment }) => {
     <div className="text-white flex flex-grow ">
       <div className="card  glass">
         <figure>
-          <img src={thumbnailUrl} alt="car!" />
+          <img className="h-80  " src={thumbnailUrl} alt="car!" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{assignmentTitle}</h2>
