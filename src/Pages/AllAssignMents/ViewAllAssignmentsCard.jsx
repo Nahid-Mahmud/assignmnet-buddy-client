@@ -17,14 +17,22 @@ const ViewAllAssignmentsCard = ({ assignment }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const handleUpdateBtn = () => {
-    if (createdBy !== user.email) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Assignments Can be updated only by the use who created it!",
-      });
-      return;
-    }
+    // if(!user){
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Oops...",
+    //     text: "Login To update an assignment! Only creator can update his assignment",
+    //   });
+    //   return;
+    // }
+    // if (createdBy !== user.email) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Oops...",
+    //     text: "Assignments Can be updated only by the use who created it!",
+    //   });
+    //   return;
+    // }
     navigate(`/${_id}/update`);
   };
   return (

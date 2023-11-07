@@ -11,6 +11,7 @@ import ViewAssitnmentDetail from "../SharedComponents/ViewAssitnmentDetail";
 import UpdateAssignment from "../SharedComponents/UpdateAssignment";
 import TakeAssignment from "../SharedComponents/TakeAssignment";
 import GiveMark from "../SharedComponents/GiveMark";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -23,15 +24,27 @@ export const router = createBrowserRouter([
         index: true,
       },
       {
-        element: <CreateAssignment></CreateAssignment>,
+        element: (
+          <PrivateRoute>
+            <CreateAssignment></CreateAssignment>
+          </PrivateRoute>
+        ),
         path: "/createAssitnment",
       },
       {
-        element: <MyAssignments></MyAssignments>,
+        element: (
+          <PrivateRoute>
+            <MyAssignments></MyAssignments>
+          </PrivateRoute>
+        ),
         path: "/myAssignments",
       },
       {
-        element: <SubmittedAssignments></SubmittedAssignments>,
+        element: (
+          <PrivateRoute>
+            <SubmittedAssignments></SubmittedAssignments>
+          </PrivateRoute>
+        ),
         path: "/submittedAssignments",
       },
       {
@@ -39,29 +52,47 @@ export const router = createBrowserRouter([
         path: "/allAssignments",
       },
       {
-        element: <ViewAssitnmentDetail></ViewAssitnmentDetail>,
+        element: (
+          <PrivateRoute>
+            <ViewAssitnmentDetail></ViewAssitnmentDetail>
+          </PrivateRoute>
+        ),
         path: "/:id",
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_serverUrl}/assignment/${params.id}`),
       },
       {
-        element: <UpdateAssignment></UpdateAssignment>,
+        element: (
+          <PrivateRoute>
+            <UpdateAssignment></UpdateAssignment>
+          </PrivateRoute>
+        ),
         path: "/:id/update",
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_serverUrl}/assignment/${params.id}`),
       },
       {
-        element: <TakeAssignment></TakeAssignment>,
+        element: (
+          <PrivateRoute>
+            <TakeAssignment></TakeAssignment>
+          </PrivateRoute>
+        ),
         path: "/:id/takeAssignment",
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_serverUrl}/assignment/${params.id}`),
       },
       {
-        element: <GiveMark></GiveMark>,
+        element: (
+          <PrivateRoute>
+            <GiveMark></GiveMark>
+          </PrivateRoute>
+        ),
         path: "/:id/giveMark",
         loader: ({ params }) =>
           fetch(
-            `${import.meta.env.VITE_serverUrl}/assignment/submitted/${params.id}`
+            `${import.meta.env.VITE_serverUrl}/assignment/submitted/${
+              params.id
+            }`
           ),
       },
     ],

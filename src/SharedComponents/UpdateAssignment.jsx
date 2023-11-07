@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import RectangleAnimation from "./RectangleAnimation";
 import DatePicker from "react-datepicker";
 import { useState } from "react";
@@ -7,9 +7,12 @@ import axios from "axios";
 import { useAuth } from "../Hooks/useAuth";
 
 const UpdateAssignment = () => {
+  const navigate = useNavigate();
   const data = useLoaderData();
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useAuth();
+  const currentUser = user.email;
+  const createdUser = data.createdBy;
   console.log(data);
   const {
     assignmentTitle,
@@ -21,9 +24,19 @@ const UpdateAssignment = () => {
     _id,
     thumbnailUrl,
   } = data;
+  console.log(createdBy, user.email);
 
   const handleUpdate = (e) => {
     e.preventDefault();
+    if (createdUser !== currentUser) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Assignments Can be updated only by the use who created it!",
+      });
+      return;
+    }
+
     // getting all form data
     const assignmentTitle = e.target.title.value;
     const thumbnailUrl = e.target.photourl.value;
@@ -44,6 +57,7 @@ const UpdateAssignment = () => {
       createdBy,
     };
     // import.meta.env.VITE_serverUrl
+
     // post using axios
     const url = `${import.meta.env.VITE_serverUrl}/addAssignment/update/${_id}`;
     console.log(url);
@@ -58,6 +72,7 @@ const UpdateAssignment = () => {
             text: "Assignment Updated Successfully !",
           });
         }
+        navigate("/allAssignments");
       })
       .then((err) => {
         // console.log(err);
@@ -83,7 +98,7 @@ const UpdateAssignment = () => {
                     Assitnment Title
                   </label>
                   <input
-                  defaultValue={assignmentTitle}
+                    defaultValue={assignmentTitle}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="username"
                     type="text"
@@ -96,7 +111,7 @@ const UpdateAssignment = () => {
                     Thumbnail Image Url
                   </label>
                   <input
-                  defaultValue={thumbnailUrl}
+                    defaultValue={thumbnailUrl}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="photourl"
                     type="text"
@@ -124,7 +139,7 @@ const UpdateAssignment = () => {
                     Dificulty Level{" "}
                   </label>
                   <select
-                  defaultValue={difficulty}
+                    defaultValue={difficulty}
                     className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
                     name="dificulty"
                     id="dificulty"
@@ -139,7 +154,7 @@ const UpdateAssignment = () => {
                     Mark
                   </label>
                   <input
-                  defaultValue={mark}
+                    defaultValue={mark}
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="mark"
                     type="number"
@@ -154,7 +169,7 @@ const UpdateAssignment = () => {
                   Assignment Description
                 </label>
                 <textarea
-                defaultValue={description}
+                  defaultValue={description}
                   id="message"
                   name="description"
                   required
