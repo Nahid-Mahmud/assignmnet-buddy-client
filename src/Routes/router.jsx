@@ -10,6 +10,7 @@ import AllAssignMents from "../Pages/AllAssignMents/AllAssignMents";
 import ViewAssitnmentDetail from "../SharedComponents/ViewAssitnmentDetail";
 import UpdateAssignment from "../SharedComponents/UpdateAssignment";
 import TakeAssignment from "../SharedComponents/TakeAssignment";
+import GiveMark from "../SharedComponents/GiveMark";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,14 @@ export const router = createBrowserRouter([
         path: "/:id/takeAssignment",
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_serverUrl}/assignment/${params.id}`),
+      },
+      {
+        element: <GiveMark></GiveMark>,
+        path: "/:id/giveMark",
+        loader: ({ params }) =>
+          fetch(
+            `${import.meta.env.VITE_serverUrl}/assignment/submitted/${params.id}`
+          ),
       },
     ],
   },
