@@ -60,6 +60,7 @@ const GiveMark = () => {
                   {" "}
                   {data?.pdfLink}{" "}
                 </a>
+                <iframe className="h-96 w-full" src={data.pdfLink} ></iframe>
               </div>{" "}
               {/* Pdf react */}
               <div></div>

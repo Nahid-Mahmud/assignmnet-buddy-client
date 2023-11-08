@@ -1,8 +1,34 @@
-# React + Vite
+# Project Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-  JWT token Used for varification
+- User can create ,update,delete and mark others assignments
+- On logout Cookie will be deleted
+- Framer Motion used for smooth animation
+- Enforsed authentication with Firebase
+- Used Mongodb to store data
+- Used Conditional rendering
+- Private route implemented
+- Some routes are Dynamic.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+
+## [ Live Link](https://assignment-buddy.surge.sh/)
+
+Surge Deploy : [ https://assignment-buddy.surge.sh/](https://assignment-buddy.surge.sh/)
+
+
+
+
+
+## [ Server link](https://assignment-11-server-azure-beta.vercel.app/)
+
+- Sometimes server gets too lazy to load data.Visit the server link. This will force-start server. Please Logout and login again and reload 3-4 times. 
+
+
+Surge Deploy : [ https://assignment-11-server-azure-beta.vercel.app/](https://assignment-11-server-azure-beta.vercel.app/)
+
+
+
