@@ -55,12 +55,12 @@ const AllAssignMents = () => {
     <div className="bg-gradient-to-r from-[#113a31] to-[#ff4e59]">
       <div className="max-w-[95vw] mx-auto md:max-w-[90vw] ">
         {/* // dropwown */}
-        <div className="pb-10 w-96 py-10 ">
-          <label className=" mb-2 text-2xl font-semibold text-gray-900 ">
+        <div className="pb-10  py-10 ">
+          <label className=" mb-2 flex flex-wrap text-2xl font-semibold text-gray-900 ">
             Set Dificulty Level:
           </label>
           <select
-            className="btn text-white w-full   hover:bg-white hover:text-black bg-[#245d51]"
+            className="btn text-white    hover:bg-white hover:text-black bg-[#245d51]"
             name="dificulty"
             id="dificulty"
             onChange={handleOptionChange}

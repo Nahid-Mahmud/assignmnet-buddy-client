@@ -5,8 +5,10 @@ import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CreateAssignment = () => {
+  const navigaate = useNavigate();
   const { user } = useAuth();
   const [startDate, setStartDate] = useState(new Date());
 
@@ -52,6 +54,7 @@ const CreateAssignment = () => {
           text: "Assignment Added Successfully !",
         });
       }
+      navigaate("/allAssignments");
     });
   };
   return (
@@ -101,18 +104,18 @@ const CreateAssignment = () => {
                   </label>
                   {/* date picker  */}
                   <DatePicker
-                    className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border rounded  md:py-2 md:px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
                   />
                 </div>
-                <div className="pb-10 w-96 ">
+                <div className="pb-10  ">
                   <label className="block mb-2 text-sm font-medium text-gray-900 ">
                     {" "}
                     Dificulty Level{" "}
                   </label>
                   <select
-                    className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
+                    className="btn text-white   hover:bg-white hover:text-black bg-[#245d51]"
                     name="dificulty"
                     onChange={handleOptionChange}
                     id="dificulty"
