@@ -10,20 +10,26 @@ const MyAssignments = () => {
   // const geeting current user forom auth contenx
   const { user } = useAuth();
   const [myassignments, setmyassignments] = useState([]);
+  // const baseUrl = `${import.meta.env.VITE_serverUrl}/allAssignment?email=${
+  //   user?.email
+  // }`;
   const baseUrl = `${import.meta.env.VITE_serverUrl}/allAssignment/user?email=${
-    user.email
+    user?.email
   }`;
   useEffect(() => {
-    fetch(baseUrl)
+    fetch(
+      baseUrl,
+      { withCredentials: true }
+    )
       .then((res) => res.json())
       .then((data) => {
-        console.log("inside fetch", data);
+        // console.log("inside fetch", data);
         setmyassignments(data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [baseUrl]);
+  }, [baseUrl,user.email]);
 
   // // getting data from server
   // const { data, isLoading, isError } = useQuery({
@@ -80,13 +86,14 @@ const MyAssignments = () => {
           </h1>
         </div>
         <div className="min-h-[60vh] grid gap-5 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 py-16 ">
-          {myassignments.map((assignmet, index) => (
-            <MyAssignmentCard
-              handleDelete={handleDelete}
-              key={index}
-              assignmet={assignmet}
-            ></MyAssignmentCard>
-          ))}
+          {myassignments.length > 0 &&
+            myassignments.map((assignmet, index) => (
+              <MyAssignmentCard
+                handleDelete={handleDelete}
+                key={index}
+                assignmet={assignmet}
+              ></MyAssignmentCard>
+            ))}
         </div>
       </div>
     </div>

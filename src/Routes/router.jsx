@@ -12,6 +12,7 @@ import UpdateAssignment from "../SharedComponents/UpdateAssignment";
 import TakeAssignment from "../SharedComponents/TakeAssignment";
 import GiveMark from "../SharedComponents/GiveMark";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
+import MySubmittedAssignment from "../Pages/SubmittedAssignments/MySubmittedAssignment";
 
 export const router = createBrowserRouter([
   {
@@ -50,7 +51,8 @@ export const router = createBrowserRouter([
       {
         element: <AllAssignMents></AllAssignMents>,
         path: "/allAssignments",
-        loader: ()=> fetch (`${import.meta.env.VITE_serverUrl}/assignment-count`)
+        loader: () =>
+          fetch(`${import.meta.env.VITE_serverUrl}/assignment-count`),
       },
       {
         element: (
@@ -95,6 +97,14 @@ export const router = createBrowserRouter([
               params.id
             }`
           ),
+      },
+      {
+        element: (
+          <PrivateRoute>
+            <MySubmittedAssignment></MySubmittedAssignment>
+          </PrivateRoute>
+        ),
+        path: "/mySubmittedAssignments",
       },
     ],
   },

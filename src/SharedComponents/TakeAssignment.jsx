@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useAuth } from "../Hooks/useAuth";
 import RectangleAnimation from "./RectangleAnimation";
 import axios from "axios";
@@ -9,6 +9,7 @@ const TakeAssignment = () => {
   const { user } = useAuth();
   const data = useLoaderData();
   console.log(data);
+  const navigate = useNavigate()
 
   const handleSubmitAssignmnet = (e) => {
     e.preventDefault();
@@ -33,6 +34,7 @@ const TakeAssignment = () => {
           title: "Successful",
           text: "Assignment Submitted Successfully !",
         });
+        navigate('/allAssignments')
       }
     });
   };

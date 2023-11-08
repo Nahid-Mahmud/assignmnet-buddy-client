@@ -20,7 +20,8 @@ const NavBar = () => {
       <li>
         <NavItem itemName={"Home"} pathName={"/"}></NavItem>
       </li>
-      <li>
+
+      <li className="">
         <NavItem
           itemName={"All Assignments"}
           pathName={"/allAssignments"}
@@ -55,7 +56,7 @@ const NavBar = () => {
       {user ? (
         <li>
           <NavItem
-            itemName={"My Assignments"}
+            itemName={"My Creations"}
             pathName={"/myAssignments"}
           ></NavItem>
         </li>
@@ -65,7 +66,17 @@ const NavBar = () => {
       {user ? (
         <li>
           <NavItem
-            itemName={"Submitted Assignments"}
+            pathName={"/mySubmittedAssignments"}
+            itemName={"My Submissions "}
+          ></NavItem>
+        </li>
+      ) : (
+        ""
+      )}
+      {user ? (
+        <li>
+          <NavItem
+            itemName={"All Submissions"}
             pathName={"/submittedAssignments"}
           ></NavItem>
         </li>
@@ -76,7 +87,7 @@ const NavBar = () => {
   );
   return (
     <div className="bg-[#245d51] text-white">
-      <div className="xl:max-w-[90vw] max-w-[95vw] mx-auto">
+      <div className="xl:max-w-[90vw] lg:max-w-[100vw] max-w-[95vw] mx-auto">
         <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">
@@ -98,7 +109,7 @@ const NavBar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm text-black w-fit dropdown-content gap-3 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box"
+                className="menu menu-sm  text-black w-fit dropdown-content gap-3 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box"
               >
                 {navLinks}
               </ul>
@@ -112,11 +123,13 @@ const NavBar = () => {
                   alt=""
                 />
               </Link>
-              <p className="text-2xl font-semibold hidden md:inline lg:hidden xl:inline">AssignmentBuddy</p>
+              <p className="text-2xl font-semibold hidden md:inline lg:hidden xl:inline">
+                AssignmentBuddy
+              </p>
             </div>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className=" menu-horizontal gap-3 px-1">{navLinks}</ul>
+            <ul className=" menu-horizontal  gap-3 px-1">{navLinks}</ul>
           </div>
           {user ? (
             <div className="navbar-end flex gap-3">

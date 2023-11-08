@@ -16,11 +16,11 @@ const AllAssignMents = () => {
 
   const pages = [...Array(numberOfPages).keys()];
 
-  const handleItemsPerPage = (e)=>{
-    const value = parseInt(e.target.value)
-    setCurrentPage(0)
-    setItemsPerPage(value)
-  }
+  const handleItemsPerPage = (e) => {
+    const value = parseInt(e.target.value);
+    setCurrentPage(0);
+    setItemsPerPage(value);
+  };
 
   //pagination ends
   const [value, setvalue] = useState("All");
@@ -39,7 +39,8 @@ const AllAssignMents = () => {
       .get(
         `${
           import.meta.env.VITE_serverUrl
-        }/allAssignment?status=${value.toString()}&page=${currentPage}&size=${itemsPerPage}`
+        }/allAssignment?status=${value.toString()}&page=${currentPage}&size=${itemsPerPage}`,
+        { withCredentials: true }
       )
       .then((res) => {
         const data = res.data;
@@ -48,7 +49,7 @@ const AllAssignMents = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [value,currentPage,itemsPerPage]);
+  }, [value, currentPage, itemsPerPage]);
 
   return (
     <div className="bg-gradient-to-r from-[#113a31] to-[#ff4e59]">
@@ -80,31 +81,52 @@ const AllAssignMents = () => {
           ))}
         </div>
         <div className="text-center space-x-2">
-        <button className='btn' onClick={()=> currentPage>0 ? setCurrentPage(currentPage -1): setCurrentPage(currentPage) } >Previous</button>
+          <button
+            className="btn"
+            onClick={() =>
+              currentPage > 0
+                ? setCurrentPage(currentPage - 1)
+                : setCurrentPage(currentPage)
+            }
+          >
+            Previous
+          </button>
 
-          {
-            pages.map((pageNumber, index)=>{
-              return(<button 
-              className= { ` btn ${currentPage === pageNumber ? 'bg-[#ff4e59]':''} `} 
-              onClick = {()=>setCurrentPage(pageNumber)}
-              key={index}>
+          {pages.map((pageNumber, index) => {
+            return (
+              <button
+                className={` btn ${
+                  currentPage === pageNumber ? "bg-[#ff4e59]" : ""
+                } `}
+                onClick={() => setCurrentPage(pageNumber)}
+                key={index}
+              >
                 {pageNumber}
-              </button>)
-            })
-          }
-          <button onClick={()=> currentPage <numberOfPages -1 ? setCurrentPage(currentPage +1) : setCurrentPage(currentPage) } className='btn' >Next</button>
-                <select
-          value={itemsPerPage}
-          onChange={handleItemsPerPage}
-          name=""
-          id=""
-        >
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-          <option value="40">40</option>
-        </select>
+              </button>
+            );
+          })}
+          <button
+            onClick={() =>
+              currentPage < numberOfPages - 1
+                ? setCurrentPage(currentPage + 1)
+                : setCurrentPage(currentPage)
+            }
+            className="btn"
+          >
+            Next
+          </button>
+          <select
+            value={itemsPerPage}
+            onChange={handleItemsPerPage}
+            name=""
+            id=""
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+          </select>
         </div>
       </div>
     </div>

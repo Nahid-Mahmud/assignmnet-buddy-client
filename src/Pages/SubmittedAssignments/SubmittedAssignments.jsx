@@ -9,7 +9,7 @@ const SubmittedAssignments = () => {
     queryKey: ["submittedAssignment"],
     queryFn: async () => {
       const result = await axios.get(
-        `${import.meta.env.VITE_serverUrl}/submittedAssignment?givenmark=null`
+        `${import.meta.env.VITE_serverUrl}/submittedAssignment?givenmark=null`,{withCredentials:true}
       );
       const submitted = result.data;
       return submitted;
