@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
       // if user exist
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", loggedUser, {
+          .post(`${import.meta.env.VITE_serverUrl}/jwt`, loggedUser, {
             withCredentials: true,
           })
           .then((res) => {

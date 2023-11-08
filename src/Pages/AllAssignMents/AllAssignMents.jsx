@@ -39,7 +39,7 @@ const AllAssignMents = () => {
       .get(
         `${
           import.meta.env.VITE_serverUrl
-        }/allAssignment?status=${value.toString()}&page=${currentPage}&size=${itemsPerPage}`,
+        }/allAssignment?status=${value}&page=${currentPage}&size=${itemsPerPage}`,
         { withCredentials: true }
       )
       .then((res) => {

@@ -8,7 +8,7 @@ const ViewAllAssignmentsCard = ({ assignment }) => {
     assignmentTitle,
     createdBy,
     description,
-    difficulty,
+    dificulty,
     dueDate,
     mark,
     _id,
@@ -44,7 +44,7 @@ const ViewAllAssignmentsCard = ({ assignment }) => {
         <div className="card-body">
           <h2 className="card-title">{assignmentTitle}</h2>
           <div className="flex">
-            <p>Mark : {mark}</p> <p>Dificulty level: {difficulty}</p>{" "}
+            <p>Mark : {mark}</p> <p>Dificulty level: {dificulty}</p>{" "}
           </div>
           <div className=" flex flex-col   xl:flex-row gap-2">
             <Link to={`/${_id}`}>

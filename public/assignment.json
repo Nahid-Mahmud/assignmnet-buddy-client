@@ -4,7 +4,7 @@
     "description": "Solve basic JavaScript problems to understand core concepts. Tasks include:\n\n1. Write a function to find the sum of all even numbers in an array.\n2. Create a simple To-Do list application using JavaScript.\n3. Implement a function to reverse a string.",
     "mark": 85,
     "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "difficulty": "Easy",
+    "dificulty": "Easy",
     "dueDate": "2023-12-15",
     "createdBy": "nahidmahmudn@gmail.com"
   },
@@ -13,7 +13,7 @@
     "description": "Manipulate the Document Object Model using JavaScript. Tasks include:\n\n1. Create an interactive image gallery using JavaScript and HTML.\n2. Build a form validation system to ensure user input is correct.\n3. Develop a simple shopping cart functionality using DOM manipulation.",
     "mark": 92,
     "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "difficulty": "Medium",
+    "dificulty": "Medium",
     "dueDate": "2023-12-20",
     "createdBy": "nahidmahmudn@gmail.com"
   },
@@ -22,7 +22,7 @@
     "description": "Solve complex problems related to closures, prototypes, and callbacks. Tasks include:\n\n1. Implement a closure to create a private counter.\n2. Build a custom implementation of the `map` function for arrays.\n3. Use callback functions to fetch and process data from an API.",
     "mark": 78,
     "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "difficulty": "Medium",
+    "dificulty": "Medium",
     "dueDate": "2023-12-18",
     "createdBy": "admin@gmail.com"
   },
@@ -31,7 +31,7 @@
     "description": "Write asynchronous code using promises and async/await. Tasks include:\n\n1. Fetch and display data from a JSON API using the Fetch API and promises.\n2. Create a simple asynchronous function to simulate waiting for data.\n3. Build an image carousel that loads images asynchronously with async/await.",
     "mark": 88,
     "thumbnailUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "difficulty": "Hard",
+    "dificulty": "Hard",
     "dueDate": "2023-12-22",
     "createdBy": "admin@gmail.com"
   }

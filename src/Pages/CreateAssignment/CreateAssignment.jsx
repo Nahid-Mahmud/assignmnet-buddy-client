@@ -9,6 +9,13 @@ import Swal from "sweetalert2";
 const CreateAssignment = () => {
   const { user } = useAuth();
   const [startDate, setStartDate] = useState(new Date());
+
+  const [value, setvalue] = useState("Easy");
+  const handleOptionChange = (e) => {
+    setvalue(e.target.value);
+  };
+  console.log(value);
+
   const handleSubmitAssignment = (e) => {
     e.preventDefault();
     // getting all form data
@@ -16,10 +23,11 @@ const CreateAssignment = () => {
     const thumbnailUrl = e.target.photourl.value;
     // making due date sting and getting only date thhrough slice
     const dueDate = startDate.toISOString().slice(0, 10);
-    const dificulty = e.target.dificulty.value;
+    const dificulty = value;
     const mark = e.target.mark.value;
     const description = e.target.description.value;
     const createdBy = user.email;
+    console.log(dificulty);
     // creating assignment object for post method
     const assignment = {
       assignmentTitle,
@@ -30,6 +38,7 @@ const CreateAssignment = () => {
       description,
       createdBy,
     };
+    console.log(assignment);
     // import.meta.env.VITE_serverUrl
     // post using axios
     const url = `${import.meta.env.VITE_serverUrl}/addAssignment`;
@@ -105,6 +114,7 @@ const CreateAssignment = () => {
                   <select
                     className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
                     name="dificulty"
+                    onChange={handleOptionChange}
                     id="dificulty"
                   >
                     <option value="Easy">Easy</option>
