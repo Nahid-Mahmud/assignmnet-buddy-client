@@ -28,7 +28,7 @@ Surge Deploy : [ https://assignment-buddy.surge.sh/](https://assignment-buddy.su
 - Sometimes server gets too lazy to load data.Visit the server link. This will force-start server. Please Logout and login again and reload 3-4 times. 
 
 
-Surge Deploy : [ https://assignment-11-server-azure-beta.vercel.app/](https://assignment-11-server-azure-beta.vercel.app/)
+vercel Deploy : [ https://assignment-11-server-azure-beta.vercel.app/](https://assignment-11-server-azure-beta.vercel.app/)
 
 
 
