@@ -26,7 +26,7 @@ const TakeAssignment = () => {
     };
     console.log(submittedAssignment);
     const url = `${import.meta.env.VITE_serverUrl}/submittedAssignment`;
-    axios.post(url, submittedAssignment).then((res) => {
+    axios.post(url, submittedAssignment,{withCredentials:true}).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
         Swal.fire({

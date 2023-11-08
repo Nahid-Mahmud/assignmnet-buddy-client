@@ -14,7 +14,7 @@ const GiveMark = () => {
     const giventMarkData = { givenMark, feedback, status: 'confirm' };
     axios.patch(
       `${import.meta.env.VITE_serverUrl}/markAssignment/${data._id}`,
-      giventMarkData
+      giventMarkData,{withCredentials:true}
     ).then(res=>{
       console.log(res.data);
       if(res.data.matchedCount){

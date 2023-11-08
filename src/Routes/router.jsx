@@ -13,12 +13,13 @@ import TakeAssignment from "../SharedComponents/TakeAssignment";
 import GiveMark from "../SharedComponents/GiveMark";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import MySubmittedAssignment from "../Pages/SubmittedAssignments/MySubmittedAssignment";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <div>Error Page</div>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         element: <Home></Home>,

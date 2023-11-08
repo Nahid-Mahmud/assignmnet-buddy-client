@@ -34,20 +34,16 @@ const CreateAssignment = () => {
     // post using axios
     const url = `${import.meta.env.VITE_serverUrl}/addAssignment`;
     console.log(url);
-    axios
-      .post(url, assignment)
-      .then((res) => {
-        console.log(res.data);
-        if(res.data.insertedId){
-          Swal.fire({
-            icon: "success",
-            title: "Successful",
-            text: "Assignment Added Successfully !",
-          });
-        }
-
-      })
-     
+    axios.post(url, assignment, { withCredentials: true }).then((res) => {
+      console.log(res.data);
+      if (res.data.insertedId) {
+        Swal.fire({
+          icon: "success",
+          title: "Successful",
+          text: "Assignment Added Successfully !",
+        });
+      }
+    });
   };
   return (
     <div className="md:max-w-[90vw] max-w-[95vw] py-10 mx-auto">

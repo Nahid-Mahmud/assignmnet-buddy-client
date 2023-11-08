@@ -17,7 +17,7 @@ const MySubmittedCard = ({ singleSubmittedAssignment,handleDelete }) => {
             <div>
               {singleSubmittedAssignment?.status ? (
                 <div>
-                  Qauired mark : {singleSubmittedAssignment.givenMark}
+                  Aquired mark : {singleSubmittedAssignment.givenMark}
                 </div>
               ) : (
                 <div> status : Pending </div>
