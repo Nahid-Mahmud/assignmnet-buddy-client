@@ -7,7 +7,7 @@ const ViewAssitnmentDetail = () => {
     assignmentTitle,
     createdBy,
     description,
-    difficulty,
+    dificulty,
     dueDate,
     mark,
     _id,
@@ -27,7 +27,7 @@ const ViewAssitnmentDetail = () => {
             <p className="text-lg">
               {" "}
               Dificulty level: <span className="font-bold">
-                {difficulty}{" "}
+                {dificulty}{" "}
               </span>{" "}
             </p>
             <p className="text-lg">
@@ -40,7 +40,9 @@ const ViewAssitnmentDetail = () => {
             </p>
           </div>
           <div className="card-actions justify-end">
-            <Link to={`/${_id}/takeAssignment`}><button className="btn btn-primary">Take Assignment</button></Link>
+            <Link to={`/${_id}/takeAssignment`}>
+              <button className="btn btn-primary">Take Assignment</button>
+            </Link>
           </div>
         </div>
       </div>

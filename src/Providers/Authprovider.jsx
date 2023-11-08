@@ -63,7 +63,15 @@ const AuthProvider = ({ children }) => {
           .then((res) => {
             console.log("Token response", res.data);
           });
-      } 
+      } else {
+        axios
+          .post(`${import.meta.env.VITE_serverUrl}/logout`, loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.data);
+          });
+      }
     });
     return () => {
       unSubscribe();

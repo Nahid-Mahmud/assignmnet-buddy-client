@@ -172,7 +172,7 @@ export default CreateAssignment;
 // a. Assignment creation:
 // ● Any logged in user is able to create an assignment for all users.
 // ● An assignment will have a title, description, marks, thumbnail
-// Image URL, assignment difficulty level(easy, medium, hard) [YOU
+// Image URL, assignment dificulty level(easy, medium, hard) [YOU
 // MAY USE DROPDOWN SELECT INPUT FIELD], and due date
 // [use this package for selecting date
 // “https://www.npmjs.com/package/react-datepicker”] .

@@ -18,7 +18,7 @@ const UpdateAssignment = () => {
     assignmentTitle,
     createdBy,
     description,
-    difficulty,
+    dificulty,
     dueDate,
     mark,
     _id,
@@ -139,7 +139,7 @@ const UpdateAssignment = () => {
                     Dificulty Level{" "}
                   </label>
                   <select
-                    defaultValue={difficulty}
+                    defaultValue={dificulty}
                     className="btn text-white w-full  hover:bg-white hover:text-black bg-[#245d51]"
                     name="dificulty"
                     id="dificulty"

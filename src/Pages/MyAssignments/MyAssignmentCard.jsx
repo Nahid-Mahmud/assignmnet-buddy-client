@@ -6,7 +6,7 @@ const MyAssignmentCard = ({ assignmet, handleDelete }) => {
     assignmentTitle,
     createdBy,
     description,
-    difficulty,
+    dificulty,
     dueDate,
     mark,
     thumbnailUrl,
@@ -20,7 +20,7 @@ const MyAssignmentCard = ({ assignmet, handleDelete }) => {
         <div className="card-body">
           <h2 className="card-title">{}</h2>
           <div className="flex">
-            <p>Mark : {mark}</p> <p>Dificulty level: {difficulty}</p>{" "}
+            <p>Mark : {mark}</p> <p>Dificulty level: {dificulty}</p>{" "}
           </div>
           <div className=" flex flex-col   xl:flex-row gap-2">
             <Link to={`/${_id}`}>
