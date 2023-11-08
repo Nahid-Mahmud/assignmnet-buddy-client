@@ -17,10 +17,7 @@ const MyAssignments = () => {
     user?.email
   }`;
   useEffect(() => {
-    fetch(
-      baseUrl,
-      { withCredentials: true }
-    )
+    fetch(baseUrl, { withCredentials: true })
       .then((res) => res.json())
       .then((data) => {
         // console.log("inside fetch", data);
@@ -29,7 +26,7 @@ const MyAssignments = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [baseUrl,user.email]);
+  }, [baseUrl, user.email]);
 
   // // getting data from server
   // const { data, isLoading, isError } = useQuery({
