@@ -54,7 +54,7 @@ const GiveMark = () => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  className="text-blue-500"
+                  className="text-blue-500 break-words"
                   href={data?.pdfLink}
                 >
                   {" "}
