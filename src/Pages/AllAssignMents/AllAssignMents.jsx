@@ -73,7 +73,7 @@ const AllAssignMents = () => {
           </select>
         </div>
         <div className="min-h-[60vh] grid gap-5 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 py-16 ">
-          {assignments?.map((assignment, index) => (
+          {assignments.length>0 && assignments?.map((assignment, index) => (
             <ViewAllAssignmentsCard
               key={index}
               assignment={assignment}

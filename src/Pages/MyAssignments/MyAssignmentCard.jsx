@@ -18,7 +18,7 @@ const MyAssignmentCard = ({ assignmet, handleDelete }) => {
           <img src={thumbnailUrl} alt="car!" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{}</h2>
+          <h2 className="card-title">{assignmentTitle}</h2>
           <div className="flex">
             <p>Mark : {mark}</p> <p>Dificulty level: {dificulty}</p>{" "}
           </div>
