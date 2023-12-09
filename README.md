@@ -1,3 +1,7 @@
+# About 
+Assignment Buddy is an online group study platform where users create, manage, and grade assignments collaboratively. Features include secure authentication, assignment creation with detailed parameters, individual assignment taking, submission, marking, and dynamic pages. 
+
+
 # Project Features
 
 -  JWT token Used for varification
