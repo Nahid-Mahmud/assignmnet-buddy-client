@@ -4,30 +4,44 @@ import { useAuth } from "../Hooks/useAuth";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 // componennt
 const NavBar = () => {
   // use context
   const { user, signoutUser } = useAuth();
 
-  const [myassignments, setmyassignments] = useState([]);
+  // const [myassignments, setmyassignments] = useState([]);
   // const baseUrl = `${import.meta.env.VITE_serverUrl}/allAssignment?email=${
   //   user?.email
   // }`;
   const baseUrl = `${import.meta.env.VITE_serverUrl}/allAssignment/user?email=${
     user?.email
   }`;
-  useEffect(() => {
-    fetch(baseUrl, { withCredentials: true })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log("inside fetch", data);
-        setmyassignments(data);
-      })
-      .catch((err) => {
-        console.log(err);
+  // useEffect(() => {
+  //   fetch(baseUrl, { withCredentials: true })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       // console.log("inside fetch", data);
+  //       setmyassignments(data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [baseUrl, user.email]);
+
+  const { data: myassignments } = useQuery({
+    queryKey: ["usercreatedAssignments"],
+    enabled: !!user,
+    queryFn: async () => {
+      const result = await axios.get(baseUrl, {
+        withCredentials: true,
       });
-  }, [baseUrl, user.email]);
+      const userCreatedAssignments = result.data;
+      return userCreatedAssignments;
+    },
+  });
 
   console.log(myassignments);
 
