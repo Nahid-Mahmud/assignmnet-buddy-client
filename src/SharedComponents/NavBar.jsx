@@ -3,11 +3,34 @@ import NavItem from "./NavItem";
 import { useAuth } from "../Hooks/useAuth";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 // componennt
 const NavBar = () => {
   // use context
   const { user, signoutUser } = useAuth();
+
+  const [myassignments, setmyassignments] = useState([]);
+  // const baseUrl = `${import.meta.env.VITE_serverUrl}/allAssignment?email=${
+  //   user?.email
+  // }`;
+  const baseUrl = `${import.meta.env.VITE_serverUrl}/allAssignment/user?email=${
+    user?.email
+  }`;
+  useEffect(() => {
+    fetch(baseUrl, { withCredentials: true })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log("inside fetch", data);
+        setmyassignments(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [baseUrl, user.email]);
+
+  console.log(myassignments);
+
   //   signout user
   const handleUserSignOur = () => {
     signoutUser()
@@ -133,7 +156,13 @@ const NavBar = () => {
           </div>
           {user ? (
             <div className="navbar-end flex gap-3">
-              <div>
+              <div className=" items-center hidden xl:flex justify-center gap-2">
+                <div>
+                  <button className="btn bg-green-700 text-white hover:bg-green-900">
+                    A-Count
+                    <div className="badge">{myassignments?.length}</div>
+                  </button>
+                </div>
                 <img
                   title={user?.displayName}
                   className="rounded-full h-16 w-16 "
