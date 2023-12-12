@@ -4,10 +4,12 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import { updateProfile } from "firebase/auth";
 import GoogleLogin from "../../SharedComponents/GoogleLogin";
+import PasswordStrengthIndicator from "./PasswordStrengthIndicator";
 
 const SignUp = () => {
   // useSates
   const [userSignUpError, SetUserSignUpError] = useState("");
+  const [passwordforStrength, setPasswordforStrength] = useState("");
   // values form authprovider
   const { googleLogIn, emailPassSignup } = useAuth();
 
@@ -71,7 +73,7 @@ const SignUp = () => {
         SetUserSignUpError(err.message);
       });
   };
-// Google sign In 
+  // Google sign In
   const handleGoogleLogin = () => {
     SetUserSignUpError("");
     console.log("first");
@@ -151,7 +153,9 @@ const SignUp = () => {
                 id="password"
                 type="password"
                 placeholder="******************"
+                onChange={(e) => setPasswordforStrength(e.target.value)}
               />
+              <PasswordStrengthIndicator password={passwordforStrength} />
               <p className="text-red-500 text-xs italic">{userSignUpError}</p>
             </div>
             <div className="flex items-center gap-3 justify-between">
@@ -172,9 +176,7 @@ const SignUp = () => {
               </p>
             </div>
           </form>
-          <p className="text-2xl font-medium ">
-            Connect with Social Network!
-          </p>
+          <p className="text-2xl font-medium ">Connect with Social Network!</p>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div onClick={handleGoogleLogin} className="text-center py-7 ">
               <GoogleLogin text="Sign Up With Google "></GoogleLogin>
