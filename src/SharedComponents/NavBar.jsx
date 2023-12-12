@@ -174,7 +174,9 @@ const NavBar = () => {
                 <div>
                   <button className="btn bg-green-700 text-white hover:bg-green-900">
                     A-Count
-                    <div className="badge">{myassignments?.length}</div>
+                    <div className="badge">
+                      {myassignments?.length ? myassignments?.length : 0}
+                    </div>
                   </button>
                 </div>
                 <img
