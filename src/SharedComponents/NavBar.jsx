@@ -4,47 +4,31 @@ import { useAuth } from "../Hooks/useAuth";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-
+import { themeDataFromLocalStorage } from "../Hooks/getThemefromLocalStorage";
+import { FaMoon, FaSun } from "react-icons/fa";
 // componennt
 const NavBar = () => {
+  //  Theme for dark mode
+  const themeData = themeDataFromLocalStorage();
+  const [theme, setTheme] = useState(themeData);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  // Theme Switcher Function
+
+  const themeSwitcher = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   // use context
   const { user, signoutUser } = useAuth();
-
-  // const [myassignments, setmyassignments] = useState([]);
-  // const baseUrl = `${import.meta.env.VITE_serverUrl}/allAssignment?email=${
-  //   user?.email
-  // }`;
-  const baseUrl = `${import.meta.env.VITE_serverUrl}/allAssignment/user?email=${
-    user?.email
-  }`;
-  // useEffect(() => {
-  //   fetch(baseUrl, { withCredentials: true })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       // console.log("inside fetch", data);
-  //       setmyassignments(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, [baseUrl, user.email]);
-
-  const { data: myassignments } = useQuery({
-    queryKey: ["usercreatedAssignments"],
-    enabled: !!user,
-    queryFn: async () => {
-      const result = await axios.get(baseUrl, {
-        withCredentials: true,
-      });
-      const userCreatedAssignments = result.data;
-      return userCreatedAssignments;
-    },
-  });
-
-  console.log(myassignments);
-
   //   signout user
   const handleUserSignOur = () => {
     signoutUser()
@@ -59,10 +43,7 @@ const NavBar = () => {
       </li>
 
       <li className="">
-        <NavItem
-          itemName={"All Assignments"}
-          pathName={"/allAssignments"}
-        ></NavItem>
+        <NavItem itemName={"All Assignments"} pathName={"/allAssignments"}></NavItem>
       </li>
       {user ? (
         ""
@@ -81,10 +62,7 @@ const NavBar = () => {
 
       {user ? (
         <li>
-          <NavItem
-            itemName={"Create Assignment"}
-            pathName={"/createAssitnment"}
-          ></NavItem>
+          <NavItem itemName={"Create Assignment"} pathName={"/createAssitnment"}></NavItem>
         </li>
       ) : (
         ""
@@ -92,38 +70,37 @@ const NavBar = () => {
 
       {user ? (
         <li>
-          <NavItem
-            itemName={"My Creations"}
-            pathName={"/myAssignments"}
-          ></NavItem>
+          <NavItem itemName={"My Creations"} pathName={"/myAssignments"}></NavItem>
         </li>
       ) : (
         ""
       )}
       {user ? (
         <li>
-          <NavItem
-            pathName={"/mySubmittedAssignments"}
-            itemName={"My Submissions "}
-          ></NavItem>
+          <NavItem pathName={"/mySubmittedAssignments"} itemName={"My Submissions "}></NavItem>
         </li>
       ) : (
         ""
       )}
       {user ? (
         <li>
-          <NavItem
-            itemName={"All Submissions"}
-            pathName={"/submittedAssignments"}
-          ></NavItem>
+          <NavItem itemName={"All Submissions"} pathName={"/submittedAssignments"}></NavItem>
         </li>
       ) : (
         ""
       )}
+
+      <li>
+        {theme === "dark" ? (
+          <FaSun onClick={themeSwitcher} className="text-2xl cursor-pointer" />
+        ) : (
+          <FaMoon onClick={themeSwitcher} className="text-2xl cursor-pointer" />
+        )}
+      </li>
     </>
   );
   return (
-    <div className="bg-[#245d51] text-white">
+    <div className="bg-[#245d51] text-white dark:bg-black">
       <div className="xl:max-w-[90vw] lg:max-w-[100vw] max-w-[95vw] mx-auto">
         <div className="navbar ">
           <div className="navbar-start">
@@ -136,12 +113,7 @@ const NavBar = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                 </svg>
               </label>
               <ul
@@ -154,15 +126,9 @@ const NavBar = () => {
             <div className="flex items-center">
               <Link to={"/"}>
                 {" "}
-                <img
-                  className="h-16 w-16"
-                  src="https://i.ibb.co/YNDZ8wP/AB.png"
-                  alt=""
-                />
+                <img className="h-16 w-16" src="https://i.ibb.co/YNDZ8wP/AB.png" alt="" />
               </Link>
-              <p className="text-2xl font-semibold hidden md:inline lg:hidden xl:inline">
-                AssignmentBuddy
-              </p>
+              <p className="text-2xl font-semibold hidden md:inline lg:hidden xl:inline">AssignmentBuddy</p>
             </div>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -170,21 +136,8 @@ const NavBar = () => {
           </div>
           {user ? (
             <div className="navbar-end flex gap-3">
-              <div className=" items-center hidden xl:flex justify-center gap-2">
-                <div>
-                  <button className="btn bg-green-700 text-white hover:bg-green-900">
-                    A-Count
-                    <div className="badge">
-                      {myassignments?.length ? myassignments?.length : 0}
-                    </div>
-                  </button>
-                </div>
-                <img
-                  title={user?.displayName}
-                  className="rounded-full h-16 w-16 "
-                  src={user?.photoURL}
-                  alt=""
-                />
+              <div>
+                <img title={user?.displayName} className="rounded-full h-16 w-16 " src={user?.photoURL} alt="" />
               </div>
               <motion.button
                 whileHover={{ scale: 1.2, rotate: 360 }}
