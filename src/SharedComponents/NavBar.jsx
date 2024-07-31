@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { themeDataFromLocalStorage } from "../Hooks/getThemefromLocalStorage";
 import { FaMoon, FaSun } from "react-icons/fa";
+import Logo from "../assets/images/AB.png";
 // componennt
 const NavBar = () => {
   //  Theme for dark mode
@@ -126,7 +127,7 @@ const NavBar = () => {
             <div className="flex items-center">
               <Link to={"/"}>
                 {" "}
-                <img className="h-16 w-16" src="https://i.ibb.co/YNDZ8wP/AB.png" alt="" />
+                <img className="h-16 w-16" src={Logo} alt="" />
               </Link>
               <p className="text-2xl font-semibold hidden md:inline lg:hidden xl:inline">AssignmentBuddy</p>
             </div>
